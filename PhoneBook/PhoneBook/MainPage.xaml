@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhoneBook.MainPage">
+
+    <StackLayout Spacing="0" BackgroundColor="White">
+        <StackLayout Orientation="Horizontal" Spacing="0" Padding="5">
+
+            <Label x:Name="syncTxt" Text="" TextColor="White" FontSize="Medium" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+
+            <Button Text="Синх."  BackgroundColor="LightGray"
+                    HorizontalOptions="EndAndExpand"
+                        Clicked="SyncButton_Click"/>
+
+        </StackLayout>
+
+        <ListView x:Name="contactsList" SeparatorColor="Green" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding FullName}" FontSize="Medium"/>
+                                <Label Text="{Binding PhoneNumber}" FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
